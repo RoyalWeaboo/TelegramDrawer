@@ -102,21 +102,41 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 true
             }
             R.id.nav_nearby -> {
-
+                supportFragmentManager.beginTransaction().apply {
+                    replace(R.id.nav_host_fragment_content_main, NearbyFragment())
+                    commit()
+                }
+                true
             }
             R.id.nav_saved_messages -> {
-
+                supportFragmentManager.beginTransaction().apply {
+                    replace(R.id.nav_host_fragment_content_main, SavedMessageFragment())
+                    commit()
+                }
+                true
             }
             R.id.nav_settings -> {
-
+                supportFragmentManager.beginTransaction().apply {
+                    replace(R.id.nav_host_fragment_content_main, SettingsFragment())
+                    commit()
+                }
+                true
             }
             R.id.nav_invite -> {
-
+                supportFragmentManager.beginTransaction().apply {
+                    replace(R.id.nav_host_fragment_content_main, InviteFragment())
+                    commit()
+                }
+                true
             }
             R.id.nav_features -> {
-
+                supportFragmentManager.beginTransaction().apply {
+                    replace(R.id.nav_host_fragment_content_main, FeaturesFragment())
+                    commit()
+                }
+                true
             }
-            else -> true
+            else -> drawerLayout.closeDrawer(GravityCompat.START)
         }
         drawerLayout.closeDrawer(GravityCompat.START)
         return true
